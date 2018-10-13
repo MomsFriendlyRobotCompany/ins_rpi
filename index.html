@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>readme</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="inertial-navigation-system">Inertial Navigation System</h1>
+<p><strong>still under development</strong></p>
+<p>This was originally part of another (much more complex) robot I was building. I decided to break it out into its own repo.</p>
+<h2 id="mechanical">Mechanical</h2>
+<p><img src="mechanical/ins_rpi.png" /></p>
+<p>This is designed using <a href="http://www.openscad.org/">OpenScad</a> which is a solid modeller. There are printable 3d stl files available in the mechanical directory along with the scad file that created them. You will also need:</p>
+<ul>
+<li>4 4-40 1 inch stand offs</li>
+<li>8 4-40 machine screws</li>
+<li>6 2-56 machine screws and nuts (for the IMU and Raspberry Pi)</li>
+<li>4 zip ties (secure camera case to mount)</li>
+</ul>
+<h2 id="electronics">Electronics</h2>
+<p>You will need:</p>
+<ul>
+<li><a href="https://www.adafruit.com/product/3055">Raspberry Pi 3</a></li>
+<li><a href="https://www.adafruit.com/product/3463">NXP 9-DOF i2c IMU</a></li>
+<li><a href="https://www.adafruit.com/product/3099">Pi Camera</a></li>
+<li><a href="https://www.adafruit.com/product/3253">Pi Camera Case</a></li>
+<li>Lidar: URG or ydLidar are good</li>
+<li>5V 2.5A power source</li>
+<li>4 female-to-female jumper cables (IMU to RPi)</li>
+</ul>
+<h2 id="software">Software</h2>
+<p>You will need to install the following Python 3 libraries using <code>pip</code>:</p>
+<ul>
+<li>pydar</li>
+<li>ins_nav</li>
+<li>nxp_imu</li>
+<li>sslam</li>
+<li>squaternion</li>
+</ul>
+<h2 id="vision">Vision</h2>
+<p>You will also need OpenCV 4.x to use this. Unfortunately for the Raspberry Pi, at the time of this writting, there is no easy way to do this. You will have to build/compile it yourself for Python 3.</p>
+</body>
+</html>

@@ -11,13 +11,16 @@
       span.underline{text-decoration: underline;}
       div.column{display: inline-block; vertical-align: top; width: 50%;}
   </style>
+  <link rel="stylesheet" href="docs/pandoc.css" />
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
 </head>
 <body>
+<p><img src="pics/ins-hw.jpg" /></p>
 <h1 id="inertial-navigation-system">Inertial Navigation System</h1>
 <p><strong>still under development</strong></p>
+<p><img src="pics/robot.jpg" /></p>
 <p>This was originally part of another (much more complex) robot I was building. I decided to break it out into its own repo.</p>
 <h2 id="mechanical">Mechanical</h2>
 <p><img src="mechanical/ins_rpi.png" /></p>
@@ -32,9 +35,9 @@
 <p>You will need:</p>
 <ul>
 <li><a href="https://www.adafruit.com/product/3055">Raspberry Pi 3</a></li>
-<li><a href="https://www.adafruit.com/product/3463">NXP 9-DOF i2c IMU</a></li>
+<li><a href="https://www.adafruit.com/product/3463">NXP 9-DOF i2c IMU</a>: accelerometer, gyros, and magnetometer</li>
 <li><a href="https://www.adafruit.com/product/3099">Pi Camera</a></li>
-<li><a href="https://www.adafruit.com/product/3253">Pi Camera Case</a></li>
+<li><a href="https://www.adafruit.com/product/3253">Pi Camera Case</a>, I like the clear front to see the camera module</li>
 <li>Lidar: URG or ydLidar are good</li>
 <li>5V 2.5A power source</li>
 <li>4 female-to-female jumper cables (IMU to RPi)</li>
@@ -50,5 +53,9 @@
 </ul>
 <h2 id="vision">Vision</h2>
 <p>You will also need OpenCV 4.x to use this. Unfortunately for the Raspberry Pi, at the time of this writting, there is no easy way to do this. You will have to build/compile it yourself for Python 3.</p>
+<footer>
+<p>Software is licensed under MIT or other.</p>
+Documentation and 3d models are licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>. <br /> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"> <img alt="Creative Commons License" style="border-width:0; width:100px;" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /> </a>
+</footer>
 </body>
 </html>

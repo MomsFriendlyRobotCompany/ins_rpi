@@ -1,6 +1,10 @@
+![](pics/ins-hw.jpg)
+
 # Inertial Navigation System
 
 **still under development**
+
+![](pics/robot.jpg)
 
 This was originally part of another (much more complex) robot I was building. I decided to break it out into its own repo.
 
@@ -20,9 +24,9 @@ This is designed using [OpenScad](http://www.openscad.org/) which is a solid mod
 You will need:
 
 - [Raspberry Pi 3](https://www.adafruit.com/product/3055)
-- [NXP 9-DOF i2c IMU](https://www.adafruit.com/product/3463)
+- [NXP 9-DOF i2c IMU](https://www.adafruit.com/product/3463): accelerometer, gyros, and magnetometer
 - [Pi Camera](https://www.adafruit.com/product/3099)
-- [Pi Camera Case](https://www.adafruit.com/product/3253)
+- [Pi Camera Case](https://www.adafruit.com/product/3253), I like the clear front to see the camera module
 - Lidar: URG or ydLidar are good
 - 5V 2.5A power source
 - 4 female-to-female jumper cables (IMU to RPi)

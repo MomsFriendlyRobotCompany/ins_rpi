@@ -2,3 +2,4 @@
 ._*
 *.pyc
 .ipynb_checkpoints
+*.pickle

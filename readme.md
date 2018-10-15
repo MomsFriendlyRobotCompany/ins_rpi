@@ -47,11 +47,11 @@ You will also need OpenCV 4.x to use this. Unfortunately for the Raspberry Pi, a
 
 
 <footer>
-    Software is licensed under MIT or other, see software for details.
+Software is licensed under MIT or other, see software for details.
 
-    Documentation and 3d models are licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
-    <br />
-    <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
-        <img alt="Creative Commons License" style="border-width:0; width:100px;" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" />
-    </a>
+Documentation and 3d models are licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+<br />
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+<img alt="Creative Commons License" style="border-width:0; width:100px;" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" />
+</a>
 </footer>

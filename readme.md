@@ -19,6 +19,8 @@ This is designed using [OpenScad](http://www.openscad.org/) which is a solid mod
 - 6 2-56 machine screws and nuts (for the IMU and Raspberry Pi)
 - 4 zip ties (secure camera case to mount)
 
+[Assembly](assembly.html)
+
 ## Electronics
 
 You will need:

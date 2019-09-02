@@ -14,10 +14,10 @@ This was originally part of another (much more complex) robot I was building. I 
 
 This is designed using [OpenScad](http://www.openscad.org/) which is a solid modeller. There are printable 3d stl files available in the mechanical directory along with the scad file that created them. You will also need:
 
-- 4 4-40 1 inch stand offs
-- 8 4-40 machine screws
-- 6 2-56 machine screws and nuts (for the IMU and Raspberry Pi)
-- 4 zip ties (secure camera case to mount)
+- 4 M3 1 inch stand offs
+- 8 M3x8 machine screws
+- 6 M2x8 machine screws and nuts (for the IMU and Raspberry Pi)
+- 4 zip ties or 4 M3x8 screws and nuts (secure camera case to mount)
 
 [Assembly](assembly.html)
 

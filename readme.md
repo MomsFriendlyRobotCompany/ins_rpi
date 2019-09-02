@@ -14,10 +14,10 @@ This was originally part of another (much more complex) robot I was building. I 
 
 This is designed using [OpenScad](http://www.openscad.org/) which is a solid modeller. There are printable 3d stl files available in the mechanical directory along with the scad file that created them. You will also need:
 
-- 4 M3 1 inch stand offs
-- 8 M3x8 machine screws
-- 6 M2x8 machine screws and nuts (for the IMU and Raspberry Pi)
-- 4 zip ties or 4 M3x8 screws and nuts (secure camera case to mount)
+- 4 M3 25mm stand offs
+- 8 M3x8mm machine screws
+- 6 M2x8mm machine screws and nuts (for the IMU and Raspberry Pi)
+- 4 zip ties or 4 M3x8mm screws and nuts (secure camera case to mount)
 
 [Assembly](assembly.html)
 
@@ -25,7 +25,7 @@ This is designed using [OpenScad](http://www.openscad.org/) which is a solid mod
 
 You will need:
 
-- [Raspberry Pi 3](https://www.adafruit.com/product/3055)
+- [Raspberry Pi](https://www.adafruit.com/product/3055)
 - [NXP 9-DOF i2c IMU](https://www.adafruit.com/product/3463): accelerometer, gyros, and magnetometer
 - [Pi Camera](https://www.adafruit.com/product/3099)
 - [Pi Camera Case](https://www.adafruit.com/product/3253), I like the clear front to see the camera module

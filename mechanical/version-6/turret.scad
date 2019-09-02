@@ -167,7 +167,7 @@ module lidar_base(){
 
 COLOR1 = "red";
 color(COLOR1) rpi_base();
-translate([0,-60,20]) rotate([90,0,0]) picamera();
-rotate([0,0,90]) translate([2,0,6]) rpi3();
-translate([0,0,30]) rotate([0,0,45]) color(COLOR1) lidar_base();
-translate([0,0,34]) rotate([0,0,-90]) x4lidar();
+//translate([0,-60,20]) rotate([90,0,0]) picamera();
+//rotate([0,0,90]) translate([2,0,6]) rpi3();
+//translate([0,0,30]) rotate([0,0,45]) color(COLOR1) lidar_base();
+//translate([0,0,34]) rotate([0,0,-90]) x4lidar();

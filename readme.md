@@ -10,7 +10,7 @@ This was originally part of another (much more complex) robot I was building. I 
 
 ## Mechanical
 
-![](mechanical/ins_rpi.png)
+![](mechanical/version-6/turret.png)
 
 This is designed using [OpenScad](http://www.openscad.org/) which is a solid modeller. There are printable 3d stl files available in the mechanical directory along with the scad file that created them. You will also need:
 

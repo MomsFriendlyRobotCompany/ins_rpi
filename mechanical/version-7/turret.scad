@@ -149,23 +149,36 @@ module rpi_base(){
 module lidar_base(){
     dia = 100;
     difference(){
-        cylinder(h=4, d=100);
-        cylinder(h=10, d=40, center=true);
+        union(){
+            cylinder(h=4, d=100);
+            /* rotate([0,180,45]) translate([-5,20,-2]){
+                w = 26;  ww = w+6;
+                l = 29;  ll = l+6;
+                d = 10;
+                translate([-ww/2,-ll/2-1,-2]) cube([ww+18,8,4]); // back-center
+                translate([-w/2-10,l/2-4,-2]) cube([ww+10,7,4]); // front-outside
+                translate([w/2,l/2,0]) M2Nut(d);
+                translate([w/2,-l/2,0]) color("blue") M2Nut(d);
+                translate([-w/2,l/2,0]) M2Nut(d);
+                translate([-w/2,-l/2,0]) color("blue") M2Nut(d);
+            } */
+        }
+        cylinder(h=10, d=45, center=true);
 
         // screws to rpi deck
         m3d = 6;
-        translate([50-5/2-1, 0, 0]) M3Nut(20);
-        rotate([0,0,-20]) translate([-50+5/2+1, 0, 0]) M3Nut(20);
-        translate([0, 50-5/2-1, 0]) M3Nut(20);
-        rotate([0,0,20]) translate([0, -50+5/2+1, 0]) M3Nut(20);
+        translate([50-5/2-1, 0, 0]) M3(20);
+        rotate([0,0,-20]) translate([-50+5/2+1, 0, 0]) M3(20);
+        translate([0, 50-5/2-1, 0]) M3(20);
+        rotate([0,0,20]) translate([0, -50+5/2+1, 0]) M3(20);
 
         // ydlidar/lds-01 lidar mount
-        rotate([0,180,45]) translate([3,0,-4]){
+        /* rotate([0,180,45]) translate([3,0,-4]){
             translate([22,31,0]) M3(20);
             translate([22,-31,0]) M3(20);
             translate([-35,25,0]) M3(20);
             translate([-35,-25,0]) M3(20);
-        }
+        } */
 
         // rpylidar - tbd
 
@@ -178,16 +191,45 @@ module lidar_base(){
         }
 
         // skeletonizing
-        translate([dia/3+4, dia/3+4, -2]) rotate([0,0,-45]) scale([1.2,.85,1]) cylinder(h=10, d=50); // back
+        translate([dia/3+1, dia/3+1, -2]) rotate([0,0,-45]) scale([1.2,.85,1]) cylinder(h=10, d=50); // back
         translate([-dia/4-5, dia/2.5, -2]) rotate([0,0,35]) scale([.90,.75,1]) cylinder(h=10, d=50); // right
         translate([dia/2.5, -dia/4-5, -2]) rotate([0,0,35]) scale([.90,.75,1]) cylinder(h=10, d=50); // left
         translate([-dia/3, -dia/3, -2]) rotate([0,0,-45]) scale([1.75,.70,1]) cylinder(h=10, d=50); // front
     }
+
+    // ydlidar standoffs
+    rotate([0,0,45+180]) translate([3,0,0]){
+        sod = 24;
+        translate([22,31,0]) standoff(sod);
+        translate([22,-31,0]) standoff(sod);
+        translate([-35,25,0]) standoff(sod);
+        translate([-35,-25,0]) standoff(sod);
+    }
+
+    // USB serial board
+    rotate([0,180,45]) translate([-5,24,-2]){
+        w = 26;  ww = w+6;
+        l = 29;  ll = l+6;
+        d = 10;
+
+        // back USB, center lidar plate
+        difference(){
+            translate([-ww/2-2,-ll/2-1,-2]) cube([ww+18,8,4]); // back-center
+            translate([w/2,-l/2,0]) M2Nut(d);
+            translate([-w/2,-l/2,0]) M2Nut(d);
+        }
+        // front USB, side of plate with usb connectors
+        difference(){
+            translate([-w/2-10,l/2-8,-2]) cube([ww+10,7+4,4]); // front-outside
+            translate([w/2,l/2,0]) M2Nut(d);
+            translate([-w/2,l/2,0]) M2Nut(d);
+        }
+    }
 }
 
-COLOR1 = "red";
-color(COLOR1) rpi_base();
+//COLOR1 = "red";
+/* color(COLOR1) rpi_base(); */
 //translate([0,-60,20]) rotate([90,0,0]) picamera();
 /* rotate([0,0,90]) translate([2,0,6]) rpi3(); */
-//translate([0,0,30]) rotate([0,0,45]) color(COLOR1) lidar_base();
-//translate([0,0,34]) rotate([0,0,-90]) x4lidar();
+translate([0,0,30]) rotate([0,0,45]) lidar_base();
+//translate([0,-2.5,34-13+2]) rotate([0,0,-90]) x4lidar();

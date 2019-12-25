@@ -9,7 +9,11 @@ use <lib/lidar.scad>;
 module standoff(h=30){
     difference()
     {
-        cylinder(d=8,h=h);
+        offset = 7;
+        union(){
+            cylinder(d=8,h=h-offset);
+            translate([0,0,h-offset]) cylinder(d=6, h=offset);
+        }
         /* cylinder() */
         translate([0,0,-2]) cylinder(d=2.5,h=h+4);
     }
@@ -184,15 +188,15 @@ module lidar_base(){
 
         // hokuyo urg mount
         rotate([0,180,45]) translate([0,0,-4]){
-            translate([20,20,0]) M3(20);
-            translate([20,-20,0]) M3(20);
-            translate([-20,20,0]) M3(20);
-            translate([-20,-20,0]) M3(20);
+            translate([20,20,2]) M2Nut(20);
+            translate([20,-20,2]) M2Nut(20);
+            translate([-20,20,2]) M2Nut(20);
+            translate([-20,-20,2]) M2Nut(20);
         }
 
         // skeletonizing
         translate([dia/3+1, dia/3+1, -2]) rotate([0,0,-45]) scale([1.2,.85,1]) cylinder(h=10, d=50); // back
-        translate([-dia/4-5, dia/2.5, -2]) rotate([0,0,35]) scale([.90,.75,1]) cylinder(h=10, d=50); // right
+        translate([-dia/4-5, dia/2.5, -2]) rotate([0,0,35+10]) scale([.90,.75,1]) cylinder(h=10, d=50); // right
         translate([dia/2.5, -dia/4-5, -2]) rotate([0,0,35]) scale([.90,.75,1]) cylinder(h=10, d=50); // left
         translate([-dia/3, -dia/3, -2]) rotate([0,0,-45]) scale([1.75,.70,1]) cylinder(h=10, d=50); // front
     }
@@ -207,23 +211,27 @@ module lidar_base(){
     }
 
     // USB serial board
-    rotate([0,180,45]) translate([-5,24,-2]){
+    rotate([0,180,45]) translate([-5,24,-4]){
         w = 26;  ww = w+6;
         l = 29;  ll = l+6;
         d = 10;
 
         // back USB, center lidar plate
         difference(){
-            translate([-ww/2-2,-ll/2-1,-2]) cube([ww+18,8,4]); // back-center
-            translate([w/2,-l/2,0]) M2Nut(d);
-            translate([-w/2,-l/2,0]) M2Nut(d);
+            translate([-ww/2-2,-ll/2-1,0]) cube([ww+18,8,4]); // back-center
+            translate([w/2,-l/2,1]) M2Nut(d);
+            translate([-w/2,-l/2,1]) M2Nut(d);
         }
+        M2standoff(w/2,-l/2,-1,1);
+        M2standoff(-w/2,-l/2,-1,1);
         // front USB, side of plate with usb connectors
         difference(){
-            translate([-w/2-10,l/2-8,-2]) cube([ww+10,7+4,4]); // front-outside
-            translate([w/2,l/2,0]) M2Nut(d);
-            translate([-w/2,l/2,0]) M2Nut(d);
+            translate([-w/2-10,l/2-8,0]) cube([ww+10,7+4,4]); // front-outside
+            translate([w/2,l/2,1]) M2Nut(d);
+            translate([-w/2,l/2,1]) M2Nut(d);
         }
+        M2standoff(w/2,l/2,-1,1);
+        M2standoff(-w/2,l/2,-1,1);
     }
 }
 
